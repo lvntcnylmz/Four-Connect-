@@ -274,7 +274,7 @@ public class Board extends GameObject {
     /**
      * Checks if there are enough coins in token stocks
      * 
-     * @param color : {@code Color} The color of the token
+     * @param color {@code Color} : The color of the token
      * @return {@code boolean} Returns true if there are enough coins in stock
      */
     private boolean hasToken(Color color) {
@@ -308,6 +308,15 @@ public class Board extends GameObject {
                 break;
         }
         return this.winner;
+    }
+
+    /**
+     * @param row    {@code int} : row index of gameboard
+     * @param column {@code int} : colunm index of gameboard
+     * @return {@code Color} : Returns the color of the desired cell
+     */
+    public Color getTokenColor(int row, int column){
+        return gameBoard.get(row).get(column).getToken().getColor();
     }
 
     public Token getRedToken() {
