@@ -103,7 +103,7 @@ public class Board extends GameObject {
      */
     private void createGameBoard() {
         for (int i = 0; i < row; i++) {
-            gameBoard.add(new ArrayList<>());
+            gameBoard.add(new ArrayList<Cell>());
             for (int j = 0; j < column; j++) {
                 gameBoard.get(i).add(new Cell());
             }
