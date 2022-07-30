@@ -13,8 +13,8 @@ public class MocGameTest {
 
     /**
      * Here the game logic will be tested.
-     * @throws IllegalMoveException
-     * @throws ColumnFullException
+     * @throws ColumnFullException if the column is full
+     * @throws IllegalMoveException After a win, no more stones may be thrown in.
      */
     @Test
     public void testMocGame() throws ColumnFullException, IllegalMoveException {
