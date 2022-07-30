@@ -1,21 +1,11 @@
-/**
- * @author Larissa Seiler / lse19
- *         larissa.seiler@tu-clausthal.de
- * 
- * @author Levent Can Yilmaz / lcy19
- *         levent.can.yilmaz@tu-clausthal.de
- * 
- * @version 1.0
- */
-
 package tuc.isse.Project_VierGewinnt;
 
 import org.junit.Test;
 
-import tuc.isse.Projekt_VierGewinnt.ColumnFullException;
-import tuc.isse.Projekt_VierGewinnt.IllegalMoveException;
-import tuc.isse.Projekt_VierGewinnt.model.Bord;
-import tuc.isse.Projekt_VierGewinnt.model.Token.Color;
+import fourConnect.exceptions.ColumnFullException;
+import fourConnect.exceptions.IllegalMoveException;
+import fourConnect.models.Board;
+import fourConnect.models.Color;
 
 /**
  * Test class
@@ -25,7 +15,7 @@ public class TestGame {
 	/**
 	 * Creating object from class
 	 */
-	Bord gameBoard = new Bord(6, 7);
+	Board gameBoard = new Board(6, 7);
 
 	@Test
 	public void testGameBoard() {

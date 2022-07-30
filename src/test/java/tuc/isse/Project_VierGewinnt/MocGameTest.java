@@ -1,23 +1,13 @@
-/**
- * @author Larissa Seiler / lse19
- *         larissa.seiler@tu-clausthal.de
- * 
- * @author Levent Can Yilmaz / lcy19
- *         levent.can.yilmaz@tu-clausthal.de
- * 
- * @version 1.0
- */
-
 package tuc.isse.Project_VierGewinnt;
 
 import org.junit.Test;
 
-import tuc.isse.Projekt_VierGewinnt.ColumnFullException;
-import tuc.isse.Projekt_VierGewinnt.IllegalMoveException;
-import tuc.isse.Projekt_VierGewinnt.controller.ConsoleGame;
-import tuc.isse.Projekt_VierGewinnt.controller.MocPlayer;
-import tuc.isse.Projekt_VierGewinnt.model.Bord;
-import tuc.isse.Projekt_VierGewinnt.model.Token.Color;
+import fourConnect.controller.ConsoleGame;
+import fourConnect.controller.MocPlayer;
+import fourConnect.exceptions.ColumnFullException;
+import fourConnect.exceptions.IllegalMoveException;
+import fourConnect.models.Board;
+import fourConnect.models.Color;
 
 public class MocGameTest {
 
@@ -29,11 +19,11 @@ public class MocGameTest {
     @Test
     public void testMocGame() throws ColumnFullException, IllegalMoveException {
 
-        Bord gameBoard = new Bord(6, 7);
+        Board gameBoard = new Board(6, 7);
         ConsoleGame game = new ConsoleGame(gameBoard);
 
-        MocPlayer player1 = new MocPlayer(Color.RED, gameBoard, 0);
-        MocPlayer player2 = new MocPlayer(Color.YELLOW, gameBoard, 1);
+        MocPlayer player1 = new MocPlayer(gameBoard, Color.RED, 0);
+        MocPlayer player2 = new MocPlayer(gameBoard, Color.YELLOW, 1);
 
         game.doGame(player1, player2);
     }
