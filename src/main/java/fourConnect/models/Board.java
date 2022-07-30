@@ -4,6 +4,7 @@ package fourConnect.models;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import fourConnect.exceptions.ColumnFullException;
 import fourConnect.exceptions.IllegalMoveException;
@@ -125,7 +126,7 @@ public class Board extends GameObject {
                     colorRowCounter = 0;
                     continue;
                 } 
-                else if (gameBoard.get(i).get(j).getToken().toString() == color.getTokenColor()) {
+                else if (Objects.equals(gameBoard.get(i).get(j).getToken().toString(), color.getTokenColor())) {
                     colorRowCounter++;
                     if (colorRowCounter == 4) {
                         return true;
@@ -153,7 +154,7 @@ public class Board extends GameObject {
                     colorColumnCounter = 0;
                     continue;
                 }
-                else if (gameBoard.get(i).get(j).getToken().toString() == color.getTokenColor()) {
+                else if (Objects.equals(gameBoard.get(i).get(j).getToken().toString(), color.getTokenColor())) {
                     colorColumnCounter++;
                     if (colorColumnCounter == 4) {
                         return true;
@@ -186,7 +187,7 @@ public class Board extends GameObject {
                         colorCounterLeftToRight = 0;
                         continue;
                     } 
-                    else if (gameBoard.get(i - x).get(j + y).getToken().toString() == color.getTokenColor()) {
+                    else if (Objects.equals(gameBoard.get(i - x).get(j + y).getToken().toString(), color.getTokenColor())) {
                         colorCounterLeftToRight++;
                         if (colorCounterLeftToRight == 4) {
                             return true;
@@ -207,7 +208,7 @@ public class Board extends GameObject {
                         colorCounterRightToLeft = 0;
                         continue;
                     } 
-                    else if (gameBoard.get(i - x).get(j - y).getToken().toString() == color.getTokenColor()) {
+                    else if (Objects.equals(gameBoard.get(i - x).get(j - y).getToken().toString(), color.getTokenColor())) {
                         colorCounterRightToLeft++;
                         if (colorCounterRightToLeft == 4) {
                             return true;
